@@ -16,6 +16,8 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Raimondi/delimitMate'
 
 call vundle#end()
 
