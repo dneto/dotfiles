@@ -10,6 +10,7 @@ Plugin 'junegunn/seoul256.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/vim-auto-save'
 
 call vundle#end()
 
