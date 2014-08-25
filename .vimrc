@@ -11,6 +11,12 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/vim-auto-save'
+Plugin 'mhinz/vim-signify'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-sleuth'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-bufferline'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
