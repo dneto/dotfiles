@@ -19,6 +19,13 @@ Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-markdown'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tfnico/vim-gradle'
+Plugin 'tpope/vim-surround'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'gregsexton/gitv'
 
 call vundle#end()
 
@@ -40,3 +47,4 @@ let g:neocomplete#enable_at_startup=1
 
 "Mapping
 map <C-n> :NERDTreeToggle<cr>
+map <C-Tab> :bn<cr>
