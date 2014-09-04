@@ -41,10 +41,12 @@ set guioptions=-M
 set guioptions=-t
 let g:airline_theme = 'gruvbox'
 let g:airline_powerline_fonts = 1
+set number
 
 "Neocomplete
 let g:neocomplete#enable_at_startup=1
 
 "Mapping
-map <C-n> :NERDTreeToggle<cr>
+let mapleader=','
+map <Leader>n :NERDTreeToggle<cr>
 map <C-Tab> :bn<cr>
