@@ -18,6 +18,7 @@ Plug 'vim-ruby/vim-ruby'
 
 "ColorSchemes
 Plug 'ajh17/spacegray.vim'
+Plug 'dneto/spacegray-lightline'
 
 Plug 'itchyny/lightline.vim'
 Plug 'taohexxx/lightline-buffer'

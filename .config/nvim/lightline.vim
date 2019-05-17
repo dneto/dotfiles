@@ -1,7 +1,7 @@
 set hidden
 set showtabline=2
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'colorscheme': 'spacegray',
       \ 'active':{
         \ 'left': [ ['mode', 'paste', 'fugitive'],['readonly','filename','modified']]
       \ },
