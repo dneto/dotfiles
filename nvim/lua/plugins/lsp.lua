@@ -28,6 +28,20 @@ return {
                 -- ["rust_analyzer"] = function ()
                 --    require("rust-tools").setup {}
                 --end
+                ["lua_ls"] = function()
+                    require "lspconfig".lua_ls.setup {
+                        settings = {
+                            Lua = {
+                                diagnostics = {
+                                    globals = { 'vim' }
+                                }
+                            }
+                        },
+                        workspace = {
+                            library = vim.api.nvim_get_runtime_file("", true),
+                        }
+                    }
+                end
             }
             local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
             for type, icon in pairs(signs) do

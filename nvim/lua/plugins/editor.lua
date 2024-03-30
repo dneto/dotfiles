@@ -3,16 +3,16 @@ return {
     {
         "nvim-neo-tree/neo-tree.nvim",
         dependencies = {
-          "nvim-lua/plenary.nvim",
-          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-          "MunifTanjim/nui.nvim",
-          -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         },
         keys = {
             {
                 "<leader>e",
                 function()
-                  require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+                    require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
                 end,
                 desc = "Explorer NeoTree (cwd)",
             },
@@ -43,49 +43,49 @@ return {
         opts = { open_cmd = "noswapfile vnew" },
         -- stylua: ignore
         keys = {
-          { "<leader>sr", function() require("spectre").open() end, desc = "Replace in Files (Spectre)" },
+            { "<leader>sr", function() require("spectre").open() end, desc = "Replace in Files (Spectre)" },
         },
     },
 
     {
         "RRethy/vim-illuminate",
         opts = {
-          delay = 200,
-          large_file_cutoff = 2000,
-          large_file_overrides = {
-            providers = { "lsp" },
-          },
+            delay = 200,
+            large_file_cutoff = 2000,
+            large_file_overrides = {
+                providers = { "lsp" },
+            },
         },
         config = function(_, opts)
-          require("illuminate").configure(opts)
+            require("illuminate").configure(opts)
 
-          local function map(key, dir, buffer)
-            vim.keymap.set("n", key, function()
-              require("illuminate")["goto_" .. dir .. "_reference"](false)
-            end, { desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference", buffer = buffer })
-          end
+            local function map(key, dir, buffer)
+                vim.keymap.set("n", key, function()
+                    require("illuminate")["goto_" .. dir .. "_reference"](false)
+                end, { desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference", buffer = buffer })
+            end
 
-          map("]]", "next")
-          map("[[", "prev")
+            map("]]", "next")
+            map("[[", "prev")
 
-          -- also set it after loading ftplugins, since a lot overwrite [[ and ]]
-          vim.api.nvim_create_autocmd("FileType", {
-            callback = function()
-              local buffer = vim.api.nvim_get_current_buf()
-              map("]]", "next", buffer)
-              map("[[", "prev", buffer)
-            end,
-          })
+            -- also set it after loading ftplugins, since a lot overwrite [[ and ]]
+            vim.api.nvim_create_autocmd("FileType", {
+                callback = function()
+                    local buffer = vim.api.nvim_get_current_buf()
+                    map("]]", "next", buffer)
+                    map("[[", "prev", buffer)
+                end,
+            })
         end,
         keys = {
-          { "]]", desc = "Next Reference" },
-          { "[[", desc = "Prev Reference" },
+            { "]]", desc = "Next Reference" },
+            { "[[", desc = "Prev Reference" },
         },
     },
 
     {
-      'stevearc/conform.nvim',
-      opts = {},
+        'stevearc/conform.nvim',
+        opts = {},
     },
 
     {
@@ -99,30 +99,31 @@ return {
             {
                 "nvim-treesitter/nvim-treesitter-textobjects",
                 config = function()
-                  -- When in diff mode, we want to use the default
-                  -- vim text objects c & C instead of the treesitter ones.
-                  local move = require("nvim-treesitter.textobjects.move") ---@type table<string,fun(...)>
-                  local configs = require("nvim-treesitter.configs")
-                  for name, fn in pairs(move) do
-                    if name:find("goto") == 1 then
-                      move[name] = function(q, ...)
-                        if vim.wo.diff then
-                          local config = configs.get_module("textobjects.move")[name] ---@type table<string,string>
-                          for key, query in pairs(config or {}) do
-                            if q == query and key:find("[%]%[][cC]") then
-                              vim.cmd("normal! " .. key)
-                              return
+                    -- When in diff mode, we want to use the default
+                    -- vim text objects c & C instead of the treesitter ones.
+                    local move = require("nvim-treesitter.textobjects.move") ---@type table<string,fun(...)>
+                    local configs = require("nvim-treesitter.configs")
+                    for name, fn in pairs(move) do
+                        if name:find("goto") == 1 then
+                            move[name] = function(q, ...)
+                                if vim.wo.diff then
+                                    local config = configs.get_module("textobjects.move")
+                                    [name] ---@type table<string,string>
+                                    for key, query in pairs(config or {}) do
+                                        if q == query and key:find("[%]%[][cC]") then
+                                            vim.cmd("normal! " .. key)
+                                            return
+                                        end
+                                    end
+                                end
+                                return fn(q, ...)
                             end
-                          end
                         end
-                        return fn(q, ...)
-                      end
                     end
-                  end
                 end,
             }
         },
-        cmd = {"TSUpdateSync", "TSUpdate", "TSInstall"},
+        cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
         keys = {
 
         },
@@ -184,13 +185,13 @@ return {
                     return true
                 end, opts.ensure_installed)
             end
-          require("nvim-treesitter.configs").setup(opts)
+            require("nvim-treesitter.configs").setup(opts)
         end,
     },
 
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
-    { "HiPhish/rainbow-delimiters.nvim"},
+    { "HiPhish/rainbow-delimiters.nvim" },
 
     {
         "lewis6991/gitsigns.nvim",
