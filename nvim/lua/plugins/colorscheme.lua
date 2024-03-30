@@ -6,16 +6,21 @@ return {
         opts = {
             flavour = "mocha",
             color_overrides = {
-                mocha ={
+                mocha = {
                     base = "#11111b",
                     mantle = "#11111b"
                 },
             },
             integrations = {
-                neotree = false,
-                rainbow_delimiters = true,
-                treesitter = true,
+                alpha = true,
                 cmp = true,
+                dap = true,
+                markdown = true,
+                neotree = false,
+                noice = true,
+                rainbow_delimiters = true,
+                telescope = { enabled = true },
+                treesitter = true,
             },
         },
     },
