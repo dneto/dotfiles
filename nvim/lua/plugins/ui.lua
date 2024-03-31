@@ -1,8 +1,13 @@
 return {
+    -- Start Page
     {
         'goolord/alpha-nvim',
-        config = function ()
-            require'alpha'.setup(require'alpha.themes.theta'.config)
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+            'nvim-lua/plenary.nvim'
+        },
+        config = function()
+            require 'alpha'.setup(require 'alpha-config'.config)
         end
     },
     {
@@ -10,7 +15,7 @@ return {
         version = "*",
         dependencies = 'nvim-tree/nvim-web-devicons',
         config = function()
-            require("bufferline").setup{
+            require("bufferline").setup {
                 highlights = require("catppuccin.groups.integrations.bufferline").get(),
                 options = {
                     offsets = {
@@ -26,12 +31,12 @@ return {
         end,
 
     },
-    {'stevearc/dressing.nvim', opts = {} },
+    { 'stevearc/dressing.nvim', opts = {} },
     {
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy",
         init = function()
-        vim.g.lualine_laststatus = vim.o.laststatus
+            vim.g.lualine_laststatus = vim.o.laststatus
             if vim.fn.argc(-1) > 0 then
                 -- set an empty statusline till lualine loads
                 vim.o.statusline = " "
@@ -53,7 +58,7 @@ return {
             -- OPTIONAL:
             --   `nvim-notify` is only needed, if you want to use the notification view.
             --   If not available, we use `mini` as the fallback
-            {"rcarriga/nvim-notify", opts = { top_down = false, render="wrapped-compact" }}
+            { "rcarriga/nvim-notify", opts = { top_down = false, render = "wrapped-compact" } }
         },
 
     }

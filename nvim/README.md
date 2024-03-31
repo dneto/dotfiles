@@ -8,6 +8,11 @@
 
 This folder contains my [Neovim](https://neovim.io/) configuration files.
 
+## Screenshots
+
+![nvim screenshot 1](../screenshots/nvim_1.png)
+![nvim screenshot 1](../screenshots/nvim_2.png)
+
 ## Instalation
 
 Make sure you don't have a `~/.config/nvim` folder.
