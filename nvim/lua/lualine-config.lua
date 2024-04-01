@@ -9,7 +9,7 @@ require('lualine').setup {
         lualine_a = {
             {
                 "mode",
-                fmt = function() return "" end,
+                fmt = function() return "" end,
                 padding = { right = 2, left = 1 },
             },
         },

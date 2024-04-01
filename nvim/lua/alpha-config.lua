@@ -219,7 +219,7 @@ end
 local section_sessions = {
     type = "group",
     val = {
-        { type = "text", val = section_title(" ", "Sessions"), opts = { hl = "Macro", position = "center", width = 100 } },
+        { type = "text", val = section_title(" ", "Sessions"), opts = { hl = "Macro", position = "center", width = 100 } },
         { type = "padding", val = 1 },
         {
             type = "group",
