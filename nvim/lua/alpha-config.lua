@@ -177,7 +177,7 @@ local section_mru = {
 local buttons = {
     type = "group",
     val = {
-        { type = "text", val = section_title("⚡", "Quick links"), opts = { hl = "Macro", position = "center", shrink_margin = false } },
+        { type = "text", val = section_title(" ", "Quick links"), opts = { hl = "Macro", position = "center", shrink_margin = false } },
         { type = "padding", val = 1 },
         dashboard.button("e", "  New file", "<cmd>ene<CR>"),
         dashboard.button("SPC f f", "󰈞  Find file"),
